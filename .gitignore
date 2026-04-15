@@ -1,0 +1,12 @@
+# Dépendances
+node_modules/
+.bun/
+.cache/
+
+# Système & IDE
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Fichiers personnels (pour nettoyer ton terminal actuel)
+../../
