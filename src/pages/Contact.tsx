@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
-import { Phone, MapPin, Clock, Send } from "lucide-react";
+import { Phone, MapPin, Clock, Send, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { useToast } from "@/hooks/use-toast";
+
+const CONTACT_EMAIL = "developpement@sgaexpertise.ci";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -10,7 +12,9 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message envoyé !", description: "Nous vous répondrons dans les plus brefs délais." });
+    const body = `Nom: ${form.name}%0AEmail: ${form.email}%0A%0AMessage:%0A${form.message}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(form.subject)}&body=${body}`;
+    toast({ title: "Message prêt !", description: "Votre messagerie s'ouvre pour envoyer le message." });
     setForm({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -36,9 +40,10 @@ const Contact = () => {
               </div>
               {[
                 { icon: Phone, label: "Téléphone", value: "+225 07 10 01 70 70" },
-                { icon: Phone, label: "Standard", value: "+225 25 22 00 78 41" },
+                { icon: Phone, label: "Tel", value: "+225 27 22 28 82 75" },
                 { icon: Phone, label: "WhatsApp", value: "+225 07 08 14 14 68" },
-                { icon: MapPin, label: "Adresse", value: "Bd. Latrille face ENA, Deux-Plateaux Cocody, Abidjan" },
+                { icon: Mail, label: "Email", value: CONTACT_EMAIL },
+                { icon: MapPin, label: "Adresse", value: "Cocody Riviera Golf les jardins, Abidjan" },
                 { icon: Clock, label: "Horaires", value: "Lun - Ven : 8h - 17h" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4">
@@ -84,7 +89,7 @@ const Contact = () => {
 
       <section className="h-96">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5!2d-3.99!3d5.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjEnMDAuMCJOIDPCsDU5JzI0LjAiVw!5e0!3m2!1sfr!2sci!4v1"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3!2d-3.9700!3d5.3800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQ29jb2R5IFJpdmllcmEgR29sZiBsZXMgamFyZGlucw!5e0!3m2!1sfr!2sci!4v1&q=Cocody+Riviera+Golf+les+jardins+Abidjan"
           width="100%"
           height="100%"
           style={{ border: 0 }}
