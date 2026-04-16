@@ -5,7 +5,7 @@ const TopBar = () => (
     <div className="container-custom flex items-center justify-between py-2">
       <div className="flex items-center gap-2">
         <Clock className="w-4 h-4" />
-        <span>Lundi - Vendredi 8:00 - 17:00, Samedi & Dimanche - FERMÉ</span>
+        <span>Lundi - Vendredi 8:00 - 17:00</span>
       </div>
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-2">

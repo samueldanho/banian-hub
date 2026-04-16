@@ -34,7 +34,7 @@ const Navbar = () => {
               <MapPin className="w-4 h-4 text-primary" />
               <div>
                 <p className="text-xs text-muted-foreground">Notre cabinet</p>
-                <p className="font-semibold">Deux-Plateaux Cocody, Abidjan</p>
+                <p className="font-semibold">Cocody Riviera Golf les jardins</p>
               </div>
             </div>
           </div>
