@@ -15,7 +15,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="bg-nav shadow-md sticky top-0 z-50">
+    <header className="bg-nav/90 backdrop-blur-md shadow-soft sticky top-0 z-50 border-b border-border/60">
       <div className="container-custom">
         <div className="flex items-center justify-between py-3">
           <Link to="/">
@@ -43,7 +43,7 @@ const Navbar = () => {
             href="https://wa.me/2250708141468"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-heading font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity"
+            className="hidden lg:inline-flex btn-primary !py-3 !px-6"
           >
             DEMANDER UNE EXPERTISE →
           </a>
@@ -58,11 +58,12 @@ const Navbar = () => {
             <Link
               key={link.label}
               to={link.path}
-              className={`px-4 py-4 text-sm font-heading font-semibold tracking-wide transition-colors hover:text-primary ${
+              className={`relative px-4 py-4 text-sm font-heading font-semibold tracking-wide transition-colors hover:text-primary group ${
                 location.pathname === link.path ? "text-primary" : "text-nav-foreground"
               }`}
             >
               {link.label.toUpperCase()}
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-primary transition-all duration-300 ${location.pathname === link.path ? "w-8" : "w-0 group-hover:w-8"}`} />
             </Link>
           ))}
         </nav>

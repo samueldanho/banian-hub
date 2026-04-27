@@ -3,8 +3,9 @@ import { Phone, MapPin, Facebook, Linkedin } from "lucide-react";
 import logo from "@/assets/logo-sga.svg";
 
 const Footer = () => (
-  <footer className="bg-secondary text-secondary-foreground">
-    <div className="container-custom py-16">
+  <footer className="relative bg-gradient-dark text-primary-foreground overflow-hidden">
+    <div className="absolute inset-0 bg-radial-glow opacity-40 pointer-events-none" />
+    <div className="container-custom py-16 relative">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <img src={logo} alt="SGA Expertise" className="h-12 mb-4 brightness-0 invert" />
